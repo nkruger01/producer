@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "996cd748dd9bfd22814568fe5dd85195610f2b8d"
+    "signature": "95f7172a3e5620d381f23e887036ab6c84269a74"
   },
   "compilationOptions": {
     "defines": [
@@ -25,6 +25,7 @@
       "Benner.Producer/1.0.0": {
         "dependencies": {
           "Benner.ERP.API": "1.0.0",
+          "Benner.Messaging.CLI": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Swashbuckle.AspNetCore": "5.0.0-rc4"
@@ -85,6 +86,17 @@
         },
         "compile": {
           "lib/netstandard2.0/AWSSDK.SQS.dll": {}
+        }
+      },
+      "CommandLineParser/2.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "assemblyVersion": "2.6.0.0",
+            "fileVersion": "2.6.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/CommandLine.dll": {}
         }
       },
       "Ionic.Zlib.Core/1.0.0": {
@@ -422,9 +434,22 @@
           "Benner.Messaging.dll": {}
         }
       },
+      "Benner.Messaging.CLI/1.0.0": {
+        "dependencies": {
+          "Benner.Messaging": "0.0.6",
+          "CommandLineParser": "2.6.0"
+        },
+        "runtime": {
+          "Benner.Messaging.CLI.dll": {}
+        },
+        "compile": {
+          "Benner.Messaging.CLI.dll": {}
+        }
+      },
       "Benner.Messaging.Core/1.0.0": {
         "dependencies": {
-          "Benner.Messaging": "0.0.6"
+          "Benner.Messaging": "0.0.6",
+          "Benner.Messaging.CLI": "1.0.0"
         },
         "runtime": {
           "Benner.Messaging.Core.dll": {}
@@ -3657,6 +3682,13 @@
       "path": "awssdk.sqs/3.3.102.39",
       "hashPath": "awssdk.sqs.3.3.102.39.nupkg.sha512"
     },
+    "CommandLineParser/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jjJ2Ey2pPY6OeY74Qau2cH+M+pN4kvvSP+kKlDzIZUcJs1oK+QlNjQYnm8HQj2fQa2aZLtwJig4MI0Vbx4YBSA==",
+      "path": "commandlineparser/2.6.0",
+      "hashPath": "commandlineparser.2.6.0.nupkg.sha512"
+    },
     "Ionic.Zlib.Core/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3810,6 +3842,11 @@
       "sha512": ""
     },
     "Benner.Messaging/0.0.6": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Benner.Messaging.CLI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
